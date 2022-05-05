@@ -2,8 +2,12 @@ package study.querydsl.repository;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 import study.querydsl.dto.MemberSearchCondition;
 import study.querydsl.dto.MemberTeamDto;
@@ -17,13 +21,17 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+//@ExtendWith(SpringExtension.class)
+//@DataJpaTest
 @SpringBootTest
 @Transactional
 class MemberJpaRepositoryTest {
 
+//    @Autowired
+//    TestEntityManager em;
+
     @Autowired
     EntityManager em;
-
     @Autowired
     MemberJpaRepository memberJpaRepository;
 
